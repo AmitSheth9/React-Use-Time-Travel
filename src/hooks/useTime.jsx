@@ -4,6 +4,7 @@ import { useState } from 'react'
 export default function useTime() {
     const [dates, setDates] = useState([]);
     const [index, setIndex] = useState(-1);
+    const currentDate = dates.length> 0 ? dates[index] : '';
     
     const handleUndo = () => {
       if (index>0) {
@@ -31,5 +32,5 @@ export default function useTime() {
      
     }
 
-    return [dates, index, handleChange, handleRedo, handleUndo]
+    return [dates, index, handleChange, handleRedo, handleUndo, currentDate]
 }
